@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Greens Kiosk</title>
+</head>
+
+<body>
+   <h1 id="title">Welcome to Greens Kiosk</h1>
+   <p>We sell fruits and vegetables</p>
+   <h2>Products</h2>
+   <ul id="products">
+    <script type="text/javascript">
+        fetch('http://localhost:5000/products')
+         .then(response => response.json())
+        .then(response => {
+            response.forEach(item => {
+                var record = document.getElementById('products')
+                var add= document.createElement('li');
+                var newest = document.createTextNode(item.name);
+                vee.appendChild(add);
+                vera.appendChild(newest);
+
+            })
+            console.log(response)
+        })
+
+
+        </script>
+   </ul>
+   <h3>Fruits</h3>
+   <ul id="fruList">
+    <script type="text/javascript">
+        fetch('http://localhost:5000/products/fruits')
+         .then(response => response.json())
+        .then(response => {
+            response.forEach(item => {
+                var this = document.getElementById('fruList')
+                var that = document.createElement('li');
+                var all = document.createTextNode(item.name);
+                that.appendChild(all);
+                this.appendChild(that);
+
+            })
+            console.log(response)
+        })
+
+
+        </script>
+   </ul>
+   <h3>Vegetables</h3>
+   <ul id="vegList">
+    <script type="text/javascript">
+        fetch('http://localhost:5000/products/vegetables')
+         .then(response => response.json())
+        .then(response => {
+            response.forEach(item => {
+                var array = document.getElementById('vegList')
+                var new = document.createElement('li');
+                var newest = document.createTextNode(item.name);
+                new.appendChild(newest);
+                array.appendChild(new);
+
+            })
+            console.log(response)
+        })
+
+
+
+        </script>
+   </ul>
+</body>
+
+</html>
